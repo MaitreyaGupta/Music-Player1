@@ -1,0 +1,78 @@
+/* Set default styles for the page */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .arrebaba{
+    margin:0;
+    padding:0;
+    size: 12px;
+    justify-content:center;
+    overflow: hidden;
+  }
+  /* Set styles for the section that contains the music player */
+  .Starter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Set styles for each container that holds a song and its details */
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  /* Set styles for the song image */
+  .container img {
+    width: 80%;
+    height: 13px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  /* Set styles for the song title */
+  .container .Title1,
+  .container .Title2,
+  .container .Title3 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  /* Set styles for the active container */
+  .container.active {
+    opacity: 1;
+    position: relative;
+  }
+  
+  /* Set styles for the active song title */
+  .container.active .Title1,
+  .container.active .Title2,
+  .container.active .Title3 {
+    animation: slide 0.5s ease-in-out;
+  }
+  
+  /* Create a slide-in animation for the active song title */
+  @keyframes slide {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
