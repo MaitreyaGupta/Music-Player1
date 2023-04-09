@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+<meta charset="UTF-08"> 
+<meta lang="en">
+<head> Music Player
+</head>
+<title> Music Player</title>
+<link rel="stylesheet" href="Starter1.css"></link>
+<body>
+    <section class="Starter">    
+        <div class="container">
+         <img src="stromae.jpg">
+         <div class="Title1">Alors On Danse</div>
+        </div>
+        <div class="container">
+          <img src="Stromae2.png">
+          <div class="Title2">Papatui</div>
+        </div>
+        <div class="container">
+         <img src="Stromae3.png">
+         <div class="Title3">Sante</div>
+        </div>
+            <div class="container">
+                <%= ni %>
+                <%= na %>
+            </div>
+     </section>
+     <section> 
+     <button id="prevBtn" type="Submit">left</button>
+     <button id="nextBtn" type="Submit">right</button>
+     <form action="/" method="post">
+        <input type="text" name="n" placeholder="enter the singers name"></input>
+        <input type="image" name="m" placeholder="enter the singers picture" src="img_submit.gif" alt="Submit" width="48" height="48"></input>
+        <button type="Submit">Submit</button>
+    </form>
+    </section>
+         <script src="Index.js"></script>
+         <script>
+            let current = 0;
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const containers = document.querySelectorAll('.container');
+    
+        function showSong(n) {
+          containers[current].classList.remove('active');
+          current = (n + containers.length) % containers.length;
+          containers[current].classList.add('active');
+        }
+    
+        prevBtn.addEventListener('click', () => {
+          showSong(current - 1);
+        });
+    
+        nextBtn.addEventListener('click', () => {
+          showSong(current + 1);
+        });
+         </script>
+     </body>
